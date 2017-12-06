@@ -86,6 +86,42 @@ public class SortMethods {
         printArray(input);
     }
 
+    @Test
+    public void mergeSort() {
+        int[] input = new int[]{7, 10, 3, 2, 6, 8, 1, 4, 5};
+        int[] auxArray = new int[input.length];
+        int low = 0;
+        int high = input.length - 1;
+        System.arraycopy(input, 0, auxArray, 0, input.length);
+        mergeSortImpl(input, auxArray, low, high);
+        printArray(input);
+    }
+
+    private void mergeSortImpl(int[] input, int[] auxArray, int low, int high) {
+        if (high <= low) return;
+        int mid = low + (high - low) / 2;
+        mergeSortImpl(input, auxArray, low, mid);
+        mergeSortImpl(input, auxArray, mid + 1, high);
+        mergeSubArrays(input, auxArray, low, high, mid);
+    }
+
+    private void mergeSubArrays(int[] input, int[] auxArray, int low, int high, int mid) {
+        int i = low;
+        int j = mid + 1;
+        for (int m = low; m <= high; m++) {
+            auxArray[m] = input[m];
+        }
+        for (int k = low; k <= high; k++) {
+            if (i > mid) {
+                input[k] = auxArray[j++];
+            } else if (j > high) {
+                input[k] = auxArray[i++];
+            } else if (auxArray[i] < auxArray[j]) {
+                input[k] = auxArray[i++];
+            } else input[k] = auxArray[j++];
+        }
+    }
+
     private void printArray(int[] input) {
         System.out.print(" Current array state: ");
         for (int i : input) {
