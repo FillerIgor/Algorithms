@@ -122,6 +122,45 @@ public class SortMethods {
         }
     }
 
+    @Test
+    void quickSort() {
+        // Input array should be shuffled before sorting.
+        // Bad performance with duplicates and already sorted array.
+        int[] input = new int[]{7, 10, 3, 2, 6, 8, 1, 4, 5};
+        int low = 0;
+        int high = input.length - 1;
+        quickSortImpl(input, low, high);
+        printArray(input);
+    }
+
+    private void quickSortImpl(int[] input, int low, int high){
+        if(high<=low) return;
+        int j = partitionForQuickSort(input, low, high);
+        quickSortImpl(input, low ,j-1);
+        quickSortImpl(input, j+1 , high);
+    }
+
+    private int partitionForQuickSort(int[] input, int low, int high) {
+        int i = low;
+        int j = high + 1;
+        while (true) {
+            while (input[++i] <= input[low])
+                if (i == high) break;
+            while (input[low] <= input[--j])
+                if (j == low) break;
+            if (i >= j) break;
+
+            int temp = input[i];
+            input[i] = input[j];
+            input[j] = temp;
+        }
+
+        int temp = input[low];
+        input[low] = input[j];
+        input[j] = temp;
+        return j;
+    }
+
     private void printArray(int[] input) {
         System.out.print(" Current array state: ");
         for (int i : input) {
