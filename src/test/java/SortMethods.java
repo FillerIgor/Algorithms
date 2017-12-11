@@ -123,6 +123,21 @@ public class SortMethods {
     }
 
     @Test
+    void bottomUpMergeSort() {
+        int[] input = new int[]{7, 10, 3, 2, 6, 8, 1, 4, 5, 11};
+        int N = input.length;
+        int[] auxArray = new int[N];
+        System.arraycopy(input, 0, auxArray, 0, N);
+
+        for (int sz = 1; sz < N; sz = sz + sz) {
+            for (int j = 0; j < N - sz; j += sz + sz) {
+                mergeSubArrays(input, auxArray, j,  Math.min(j + sz +sz -1, N - 1), j + sz -1);
+            }
+        }
+        printArray(input);
+    }
+
+    @Test
     void quickSort() {
         // Input array should be shuffled before sorting.
         // Bad performance with duplicates and already sorted array.
