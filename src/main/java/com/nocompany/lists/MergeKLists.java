@@ -1,12 +1,9 @@
 package com.nocompany.lists;
 
-import java.util.Arrays;
+import com.nocompany.lists.data.ListNode;
+
 import java.util.Comparator;
-import java.util.List;
 import java.util.PriorityQueue;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 
 /*
@@ -39,45 +36,26 @@ public class MergeKLists {
     }
 
     public static ListNode mergeKLists(ListNode[] lists) {
-        if (lists==null||lists.length==0) return null;
+        if (lists == null || lists.length == 0) return null;
 
-        PriorityQueue<ListNode> queue= new PriorityQueue<>(lists.length, Comparator.comparingInt(o -> o.val));
+        PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length, Comparator.comparingInt(o -> o.val));
 
         ListNode dummy = new ListNode(0);
-        ListNode tail=dummy;
+        ListNode tail = dummy;
 
-        for (ListNode node:lists)
-            if (node!=null)
+        for (ListNode node : lists)
+            if (node != null)
                 queue.add(node);
 
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             ListNode poll = queue.poll();
-            tail.next= poll;
-            tail=tail.next;
+            tail.next = poll;
+            tail = tail.next;
 
-            if (tail.next!=null)
+            if (tail.next != null)
                 queue.add(tail.next);
         }
         return dummy.next;
-    }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-
-        @Override
-        public String toString() {
-            StringBuilder stringValue = new StringBuilder(String.valueOf(val));
-            ListNode tempNext = next;
-            while (tempNext!= null){
-                stringValue.append(" ").append(tempNext.val);
-                tempNext = tempNext.next;
-            }
-            return stringValue.toString();
-        }
     }
 }
 
