@@ -2,6 +2,10 @@ package com.nocompany.lists;
 
 import com.nocompany.lists.data.ListNode;
 
+/*
+Input: list1 = [1,2,4], list2 = [1,3,4]
+Output: [1,1,2,3,4,4]
+*/
 public class MergeTwoSortedLists {
 
     public static void main(String[] args) {
