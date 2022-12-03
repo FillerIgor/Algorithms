@@ -3,7 +3,6 @@ package com.nocompany.lists;
 import com.nocompany.lists.data.ListNode;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 /*
