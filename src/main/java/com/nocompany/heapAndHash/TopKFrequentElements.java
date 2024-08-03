@@ -6,7 +6,7 @@ public class TopKFrequentElements {
 
     public static void main(String[] args) {
 //        int[] input = new int[]{1,1,1,2,2,3};
-        int[] input = new int[]{4,1,-1,2,-1,2,3};
+        int[] input = new int[]{4,1,-1,2,3,3,-1,2,3};
         int k = 2;
 
         int[] result = topKFrequent(input, k);
@@ -23,8 +23,8 @@ public class TopKFrequentElements {
 
         int[] result = new int[k];
         Queue<Integer> queue = new PriorityQueue<>((a, b)->resultMap.get(a)-resultMap.get(b));
-        for (Integer value : resultMap.keySet()) {
-            queue.add(value);
+        for (Integer key : resultMap.keySet()) {
+            queue.add(key);
             if (queue.size()>k){
                 queue.poll();
             }

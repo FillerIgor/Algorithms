@@ -3,6 +3,8 @@ package com.nocompany.strings;
 public class OneEditDistance {
 
     public static void main(String[] args) {
+//        String s = "abced";
+//        String t = "abcdd";
         String s = "abcdef";
         String t = "abcd";
 

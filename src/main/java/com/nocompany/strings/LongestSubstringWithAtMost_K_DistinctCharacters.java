@@ -12,6 +12,8 @@ public class LongestSubstringWithAtMost_K_DistinctCharacters {
 
         int result = lengthOfLongestSubstringKDistinctTwoPointers(input, k);
 
+        System.out.println("Result: " + result);
+
 
     }
 

@@ -1,4 +1,4 @@
-package com.nocompany;
+package com.nocompany.trees;
 
 import java.util.ArrayList;
 import java.util.Collections;

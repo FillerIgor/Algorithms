@@ -4,9 +4,9 @@ public class StringCompression {
 
     public static void main(String[] args) {
 //        char[] input = {'a', 'a', 'b', 'b', 'c', 'c', 'c'};
-//        char[] input = {'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'};
+        char[] input = {'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'};
 //        char[] input = {'a'};
-        char[] input = {'a', 'b', 'c'};
+//        char[] input = {'a', 'b', 'c'};
 
         int result = compress(input);
 //        int result = compressLeetCode(input);
