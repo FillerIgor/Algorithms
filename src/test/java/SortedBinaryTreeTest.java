@@ -1,4 +1,4 @@
-import com.nocompany.SortedBinaryTree;
+import com.nocompany.trees.SortedBinaryTree;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

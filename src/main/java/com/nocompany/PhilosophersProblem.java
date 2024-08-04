@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Main {
+public class PhilosophersProblem {
 
     static int numberOfGuests = 5;
     static List<String> sticks = new LinkedList();

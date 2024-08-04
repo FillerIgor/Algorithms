@@ -1,4 +1,4 @@
-package com.nocompany;
+package com.nocompany.trees;
 
 
 import org.apache.commons.lang3.StringUtils;

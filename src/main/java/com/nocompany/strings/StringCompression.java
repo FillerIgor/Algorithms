@@ -8,8 +8,8 @@ public class StringCompression {
 //        char[] input = {'a'};
 //        char[] input = {'a', 'b', 'c'};
 
-        int result = compress(input);
-//        int result = compressLeetCode(input);
+//        int result = compress(input);
+        int result = compressLeetCode(input);
         System.out.println("Result: " + result);
     }
 

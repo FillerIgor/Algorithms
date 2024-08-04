@@ -28,8 +28,4 @@ public class ValidateBinarySearchTree {
         // The left and right subtree must also be valid.
         return validate(root.left, low, root.val) && validate(root.right, root.val, high);
     }
-
-    public boolean isValidBST(TreeNode root) {
-        return validate(root, null, null);
-    }
 }
